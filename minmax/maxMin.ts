@@ -4,6 +4,7 @@
  */
 
 import { getExecuteTime } from '../utils/getExecTime.ts';
+import { writeInFile } from '../utils/writeInFile.ts';
 
 // ? Usamos esta función para saber el tiempo que pasa al ejecutar una función
 type MethodFunction = (numbers: ReadonlyArray<number>) => {
@@ -62,18 +63,7 @@ const burbleSort: SortFunction = (numbers) => {
 const getRandomNumber = (min: number, max: number): number => {
   return Math.floor(Math.random() * (max - min) + min);
 };
-/// Se usa para guardar el resultado obtenido en archivos independientes dependiendo del metodo usado
-const writeInFile = (
-  methodName: string,
-  numberCount: number,
-  timeSpent: number
-): void => {
-  Deno.writeTextFileSync(
-    `${methodName}Result.csv`,
-    `\n${numberCount},${timeSpent.toFixed(4)}`,
-    { append: true }
-  );
-};
+
 /// Genera los numeros aleatorios y genera los resultados
 const main = (numberCount: number): void => {
   const randomNumbers: ReadonlyArray<number> = Array.from(
