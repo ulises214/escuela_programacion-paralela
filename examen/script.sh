@@ -1,9 +1,9 @@
 #!/bin/bash
 #PBS -l nodes=3:ppn=5,walltime=10:00:00
-#PBS -N mpi_curso_programa
+#PBS -N extra_walle
 #PBS -q staff
 #PBS -d /mnt/zfs-pool/home/cursoHPC13/escuela_programacion-paralela/examen
-#PBS -o mpi_curso_programa.log
+#PBS -o extra.log
 #PBS -j oe
 #PBS -V
 #PBS -S /bin/bash
